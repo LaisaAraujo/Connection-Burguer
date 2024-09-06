@@ -9,7 +9,7 @@ Trazendo um cardápio dinâmico tendo a possibilidade de selecionar ingredientes
   
 ## Stack utilizada.
 **Front-end:** HTML/CSS. <br>
-**Back-end:** PHP/Laravel.
+**Back-end:** Python.
 
 ## Design.
 - Em breve...
