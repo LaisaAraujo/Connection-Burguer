@@ -5,7 +5,7 @@ O connection burguer é um site para hambúrgueres artesanal com ingredientes se
 
 ## Fluxo das páginas e funcionalidades.
 ### Cardápio
-- Adicionar ao carrinho
+- Adicionar ao carrinho <br>
 _ Essa funcionalidade será um botão que irá ficar localizado ao lado de cada item, ao clicar nele o item será adicionado na tela de “Pedido”.
 
   
