@@ -1,0 +1,46 @@
+/* Estilos do menu */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #333;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex; /* Mantém os itens em linha */
+    gap: 20px; /* Espaçamento entre os itens */
+    margin: 0; /* Remove margens */
+    padding: 0; /* Remove padding */
+    padding-right: 30px;
+}
+
+.nav-links li {
+    display: inline-block;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 15px; /* Adiciona espaço ao redor dos links */
+    transition: color 0.3s ease;
+}
