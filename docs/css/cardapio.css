@@ -1,11 +1,12 @@
-/* Estilos do menu */
-body {
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+*{
     margin: 0;
-    font-family: Arial, sans-serif;
+    padding: 0;
+    font-family: 'Inter',sans-serif;
 }
 
 header {
-    background-color: #333;
+    background-color: black;
     padding: 10px 20px;
     position: fixed;
     width: 100%;
@@ -21,16 +22,15 @@ header {
 }
 
 .logo img {
-    width: 50px;
+    width: 80px;
 }
 
 .nav-links {
     list-style: none;
-    display: flex; /* Mantém os itens em linha */
-    gap: 20px; /* Espaçamento entre os itens */
-    margin: 0; /* Remove margens */
-    padding: 0; /* Remove padding */
-    padding-right: 30px;
+    display: flex;
+    gap:150px; 
+    text-align: center;
+    padding-right: 580px;
 }
 
 .nav-links li {
@@ -41,6 +41,7 @@ header {
     color: white;
     text-decoration: none;
     font-size: 18px;
-    padding: 10px 15px; /* Adiciona espaço ao redor dos links */
+    padding: 10px 15px;
     transition: color 0.3s ease;
 }
+
