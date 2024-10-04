@@ -81,9 +81,9 @@ body {
     font-size: 20px;
 }
 
-/* Estilo da seção valores */
+
 .values {
-    background-color: #E2B71D; /* Fundo amarelo */
+    background-color: #E2B71D; 
     padding: 40px;
     text-align: center;
 }
@@ -99,7 +99,7 @@ body {
 }
 
 .value-item {
-    max-width: 250px; /* Limita a largura dos itens */
+    max-width: 250px; 
     text-align: center;
     border: 4px solid #000; 
     border-radius: 10px; 
@@ -109,13 +109,13 @@ body {
 }
 
 .value-item img {
-    width: 80px; /* Ajuste do tamanho dos ícones */
+    width: 80px; 
     margin-bottom: 10px;
 }
 
 /* Estilo da seção compromisso */
 .commitment {
-    background-color: #FFFFFF; /* Fundo branco */
+    background-color: #FFFFFF;
     padding: 40px;
     text-align: center;
 }
@@ -132,15 +132,15 @@ body {
 }
 
 .commitment-item {
-    max-width: 300px; /* Limita a largura dos itens */
+    max-width: 300px; 
     text-align: center;
     margin: 20px;
 }
 
 
 .commitment-item img {
-    width: 100%; /* Faz a imagem ocupar 100% da largura do item */
-    height: auto; /* Mantém a proporção da imagem */
+    width: 100%; 
+    height: auto; 
 }
 
 .text-left, .text-right {
