@@ -3,8 +3,14 @@
     margin: 0;
     padding: 0;
     font-family: 'Inter',sans-serif;
+    box-sizing: border-box;
 }
 
+body {
+    padding-top: 60px; /* Para evitar o conteúdo ficar embaixo do header */
+}
+
+/* Estilos para mobile first */
 header {
     background-color: black;
     padding: 10px 20px;
@@ -15,26 +21,30 @@ header {
     z-index: 1000;
 }
 
+
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: column;
 }
 
 .logo img {
     width: 80px;
 }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap:150px; 
-    text-align: center;
-    padding-right: 580px;
-}
+
+    .nav-links {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        gap: 10px; /* Espaçamento entre links no mobile */
+    }
+
 
 .nav-links li {
-    display: inline-block;
+    display: block;
 }
 
 .nav-links a {
@@ -44,10 +54,30 @@ header {
     padding: 10px 15px;
     transition: color 0.3s ease;
 }
+
+section-header {
+    max-width: 1200px; /* Limita a largura no desktop */
+    margin: 0 auto; /* Centraliza o contêiner */
+    padding: 20px; /* Ajuste conforme necessário */
+}
+
 h2 {
-    margin-top: 110px;
-    text-align: center;
-    margin-bottom: 10px;
+    margin-top: 10px; /* Diminui a margem superior */
+    margin-bottom: 5px; /* Diminui a margem inferior */
+    font-size: 24px; /* Tamanho do texto */
+    text-align: center; /* Centraliza o texto */
+}
+
+@media only screen and (max-width: 768px) {
+    h2 {
+        font-size: 20px; /* Reduz o tamanho da fonte no mobile */
+        margin-top: 100px; /* Diminui a margem superior no mobile */
+        margin-bottom: 10px; /* Diminui a margem inferior no mobile */
+    }
+    
+    .section-header {
+        padding: 10px; /* Ajusta o padding no mobile */
+    }
 }
 
 .cardapio-lanche {
@@ -55,22 +85,24 @@ h2 {
     background-color: #000000;
     padding: 20px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     border-bottom: 5px solid #E2B71D; 
 }
 
 .lanche {
     display: flex;
+    flex-direction: column;
     align-items: center;
     color: #fff;
     width: 100%;
+    text-align: center;
 }
 
 .imagem {
-    max-width:150px; 
+    max-width: 150px; 
     height: auto;
-    margin-right: 20px; 
-    flex-direction: initial;
+    margin-bottom: 15px;
 }
 
 .texto-lanche {
@@ -89,9 +121,7 @@ button {
     cursor: pointer;
     border-radius: 7px;
     font-weight: bolder;
-    margin-bottom: -80px;
-    margin-right: 50px;
- 
+    margin-top: 10px;
 }
 
 button:hover {
@@ -99,8 +129,8 @@ button:hover {
 }
 
 footer {
-    margin-top: 50px;
-    gap: 50px;
+      margin-top: 50px;
+      gap: 50px;
       display: flex;
       justify-content: center; 
       align-items: flex-start; 
@@ -125,5 +155,40 @@ footer {
       text-align: center; 
       width: 100%; 
   }
-  
-  
+
+/* Media Queries para telas maiores */
+@media (min-width: 768px) {
+    .navbar {
+        flex-direction: row;
+    }
+
+    .nav-links {
+        flex-direction: row;
+        gap: 30px;
+    }
+
+    .cardapio-lanche {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .lanche {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .imagem {
+        margin-bottom: 0;
+        margin-right: 20px;
+    }
+
+    button {
+        margin-bottom: 0;
+        margin-right: 50px;
+    }
+
+    footer {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
