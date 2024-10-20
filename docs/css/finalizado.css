@@ -48,6 +48,18 @@ header {
     transition: color 0.3s ease;
 }
 
+.fas.fa-shopping-cart {
+    color: white; 
+    font-size: 24px;
+    transition: color 0.3s ease; 
+}
+
+
+.fas.fa-shopping-cart:hover {
+    color: #E2B71D; 
+}
+
+
 main {
     display: flex;
     justify-content: center;

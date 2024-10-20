@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter',sans-serif;
+}
+
+header {
+    background-color: black;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+body {
+    padding-top: 60px; /* Para evitar o conteúdo ficar embaixo do header */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 80px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap:150px; 
+    text-align: center;
+    padding-right: 580px;
+}
+
+.nav-links li {
+    display: inline-block;
+}
+
+.nav-links a {
+    color: #FFFFFF; /* Texto branco */
+    text-decoration: none; /* Remove o sublinhado */
+    font-size: 18px;
+    font-weight: bold; /* Deixa o texto em negrito */
+    transition: color 0.3s ease; /* Animação para o efeito hover */
+}
+
+/* Efeito ao passar o mouse */
+.nav-links a:hover {
+    color: #E2B71D; /* Altera a cor do texto para amarelo ao passar o mouse */
+}
+
+/* Estilo da seção hero */
+.hero {
+    text-align: center;
+}
+
+.hero-image {
+    height: 550px;
+    width: 100%;
+
+}
+
+.fas.fa-shopping-cart {
+    color: white; 
+    font-size: 24px;
+    transition: color 0.3s ease; 
+}
+
+
+.fas.fa-shopping-cart:hover {
+    color: #E2B71D; 
+}
+
+.cardapio-lanche {
+    width: 100%;
+    background-color: #000000;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 5px solid #E2B71D; 
+}
+
+.lanche {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+}
+
+.imagem {
+    max-width: 150px; 
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.texto-lanche {
+    flex: 1; 
+}
+
+.lanche h3 {
+    margin: 5px 0;
+}
+
+button {
+    background-color:#f5cb33;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 7px;
+    font-weight: bolder;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #f5cb33;
+}
+
+/*Inicio da estilização dos produtos */
+
+h1 {
+    font-size: 2.5rem;
+    margin-top: px;
+    color: #000000;
+    text-align: center;
+    margin-top: 35px; 
+}
+.produtos .box-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 2rem; 
+    background-color: #ffffff;
+}
+
+/* Estilizando os cards menores */
+.produtos .box-container .box {
+    padding: 1.5rem; 
+    background-color: #000000; 
+    border-radius: .5rem;
+    border: .1rem solid #E2B71D; 
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    color: #ffffff; 
+    width: 220px;
+}
+
+/* Espaçamento maior entre os lanches e o footer */
+.cardapio-lanche {
+    margin-bottom: 80px; 
+}
+
+/* Centralizar e ajustar a imagem dentro dos cards */
+.box-container .imagem {
+    max-width: 80px; 
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+/* Ajuste do texto dentro dos cards */
+.box-container .texto-lanche {
+    flex: 1;
+    color: #ffffff;
+}
+
+.box-container .lanche h3 {
+    font-size: 1.5rem; 
+    margin: 5px 0;
+    color: #ffffff;
+}
+
+.box-container .button {
+    background-color: #E2B71D;
+    color: black;
+    padding: 8px 15px; 
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+.box-container .button:hover {
+    background-color: #f5cb33; }
+
+/* Footer */
+footer {
+    gap: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: #000000;
+    color: #ffffff;
+    flex-wrap: wrap;
+}
+
+  
+  .footer-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  
+  .footer-section h3 {
+      margin-bottom: 5px; 
+  }
+  
+  footer h5 {
+      margin-top: 20px; 
+      text-align: center; 
+      width: 100%; 
+  }

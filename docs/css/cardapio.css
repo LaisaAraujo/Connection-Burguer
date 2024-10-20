@@ -55,6 +55,18 @@ header {
     transition: color 0.3s ease;
 }
 
+.fas.fa-shopping-cart {
+    color: white; 
+    font-size: 24px; 
+    transition: color 0.3s ease; 
+}
+
+
+.fas.fa-shopping-cart:hover {
+    color: #E2B71D; 
+}
+
+
 section-header {
     max-width: 1200px; /* Limita a largura no desktop */
     margin: 0 auto; /* Centraliza o contêiner */
@@ -80,7 +92,7 @@ h2 {
     }
 }
 
-.cardapio-lanche {
+.box-container .cardapio-lanche  {
     width: 100%;
     background-color: #000000;
     padding: 20px;
@@ -90,7 +102,7 @@ h2 {
     border-bottom: 5px solid #E2B71D; 
 }
 
-.lanche {
+.box-container .lanche {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -99,21 +111,21 @@ h2 {
     text-align: center;
 }
 
-.imagem {
+.box-container .imagem {
     max-width: 150px; 
     height: auto;
     margin-bottom: 15px;
 }
 
-.texto-lanche {
+.box-container .texto-lanche {
     flex: 1; 
 }
 
-.lanche h3 {
+.box-container .lanche h3 {
     margin: 5px 0;
 }
 
-button {
+.box-container .button {
     background-color: #E2B71D;
     color: black;
     padding: 10px 20px;
@@ -124,7 +136,7 @@ button {
     margin-top: 10px;
 }
 
-button:hover {
+.box-container .button:hover {
     background-color: #f5cb33;
 }
 
