@@ -128,10 +128,10 @@ button:hover {
 
 h1 {
     font-size: 2.5rem;
-    margin-top: px;
     color: #000000;
     text-align: center;
-    margin-top: 35px; 
+    margin-top: 40px; 
+    margin-bottom: 25px;
 }
 .produtos .box-container {
     display: grid;
@@ -154,7 +154,7 @@ h1 {
 
 /* Espaçamento maior entre os lanches e o footer */
 .cardapio-lanche {
-    margin-bottom: 80px; 
+    margin-bottom: 100px; 
 }
 
 /* Centralizar e ajustar a imagem dentro dos cards */
@@ -192,6 +192,7 @@ h1 {
 
 /* Footer */
 footer {
+    margin-top: 50px;
     gap: 50px;
     display: flex;
     justify-content: center;

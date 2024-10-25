@@ -40,15 +40,24 @@ carrinhoCompras.forEach(item => {
 });
 
 
-let delBtn =document.querySelectorAll ('div.trash i')
-delBtn.forEach(botao => botao.addEventListener("click", (event)=> {
-    let item = event.target.parentElement.parentElement.parentElement
-    cartlist.removeChild(item)
-    let index = carrinhoCompras.findIndex(produtoitem=> produtoitem.codProduto == item.id)
-    carrinhoCompras.splice(index,1)
-    localStorage.setItem('carrinho',JSON.stringify(carrinhoCompras))
+let delBtn = document.querySelectorAll('div.trash i');
+delBtn.forEach(botao => botao.addEventListener("click", (event) => {
+    // Remover o elemento visual da tabela
+    let item = event.target.parentElement.parentElement.parentElement;
+    cartlist.removeChild(item);
 
-}))
+    // Encontrar o índice do produto no array carrinhoCompras
+    let index = carrinhoCompras.findIndex(produtoitem => produtoitem.codProduto == item.id);
+
+    // Remover o item do carrinhoCompras
+    carrinhoCompras.splice(index, 1);
+
+    // Atualizar o localStorage
+    localStorage.setItem('carrinho', JSON.stringify(carrinhoCompras));
+
+    // Recalcular o total do carrinho
+    calcTotal(carrinhoCompras);
+}));
 
 //arrumar daqui para baixo para funcionar eu tenho que arrumar pagaina de endereco e meu botao que e link
 //meu botao e um link
