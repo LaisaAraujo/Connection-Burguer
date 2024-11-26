@@ -214,9 +214,18 @@
             "imagem_produto": "imagens/produto14.png",
             "id": "bdff",
             "quantidade": 6
+          },
+          {
+            "codigo_produto": "3",
+            "nome_produto": "Php Burguer",
+            "descricao_produto": "O Php Burguer traz uma explosão de sabores! Um hambúrguer suíno suculento coberto com bacon crocante, cheddar derretido e cebola roxa, tudo montado em um pão especial com alface e tomate frescos, finalizado com molho barbecue. Uma combinação perfeita para quem adora um hambúrguer diferenciado.",
+            "preco_produto": "30.00",
+            "imagem_produto": "imagens/produto3.png",
+            "id": "6fc9",
+            "quantidade": 3
           }
         ],
-        "total": 60,
+        "total": 150,
         "finalizado": false
       }
     ]

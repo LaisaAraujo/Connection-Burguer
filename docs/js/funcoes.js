@@ -55,72 +55,35 @@ export async function findProduct(prodID) {
 
 export async function addItemCarrinho(newItem) {
     try {
-        // Obtém os dados atuais do carrinho no JSON Server
-        const response = await fetch(`${BASE_URL}/carrinho`);
-        if (!response.ok) throw new Error(`Erro ao obter carrinho: ${response.statusText}`);
-        const carrinho = await response.json();
-
-        // Verifica se o carrinho tem pedidos, caso contrário, inicializa a estrutura de pedidos
-        if (!carrinho.pedidos) {
-            carrinho.pedidos = [];  // Inicializa um array de pedidos vazio
-        }
+        const carrinho = JSON.parse(localStorage.getItem("carrinho")) || { pedidos: [] };
 
         // Se não houver pedidos, cria um novo pedido
         if (carrinho.pedidos.length === 0) {
             carrinho.pedidos.push({
-                id_pedido: 1,  // Pode ser um número gerado automaticamente ou um UUID
+                id_pedido: 1, 
                 itens: [],
                 total: 0,
-                finalizado: false // Adiciona status para o pedido
+                finalizado: false 
             });
         }
 
-        // Verifica se o carrinho foi finalizado
-        const pedidoAtual = carrinho.pedidos[carrinho.pedidos.length - 1]; // Pega o último pedido
+        const pedidoAtual = carrinho.pedidos[carrinho.pedidos.length - 1];
         if (pedidoAtual.finalizado) {
             alert("Este pedido já foi finalizado. Não é possível adicionar mais itens.");
             return;
         }
 
-        // Verifica se o item já existe no carrinho
         const itemExistente = pedidoAtual.itens.find(item => item.codigo_produto === newItem.codigo_produto);
-
         if (itemExistente) {
-            // Atualiza a quantidade do item existente
             itemExistente.quantidade += newItem.quantidade;
         } else {
-            // Adiciona o novo item ao pedido atual
             pedidoAtual.itens.push(newItem);
         }
 
-        // Recalcula o total do pedido
-        pedidoAtual.total = pedidoAtual.itens.reduce(
-            (acc, item) => acc + item.quantidade * parseFloat(item.preco_produto),
-            0
-        );
-
-        // Envia o carrinho atualizado para o JSON Server
-        const updateResponse = await fetch(`${BASE_URL}/carrinho`, {
-            method: "PUT",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(carrinho),
-        });
-
-        if (!updateResponse.ok) {
-            throw new Error(`Erro ao atualizar carrinho: ${updateResponse.statusText}`);
-        }
+        pedidoAtual.total = pedidoAtual.itens.reduce((acc, item) => acc + item.quantidade * parseFloat(item.preco_produto), 0);
+        localStorage.setItem("carrinho", JSON.stringify(carrinho));
 
         alert("Item adicionado ao carrinho com sucesso!");
-
-        // Verifica se o pedido foi adicionado corretamente na administração
-        const adminResponse = await fetch(`${BASE_URL}/pedidos`);
-        if (adminResponse.ok) {
-            const pedidos = await adminResponse.json();
-            console.log("Pedidos no servidor de administração:", pedidos);
-        } else {
-            console.error("Erro ao buscar pedidos na administração.");
-        }
-
     } catch (error) {
         console.error("Erro ao adicionar item ao carrinho:", error);
         alert(`Erro ao adicionar item ao carrinho: ${error.message}`);
@@ -198,12 +161,13 @@ export async function calcTotal() {
 // Carrega itens do carrinho na tabela
 export async function carregarCarrinho() {
     try {
-        const carrinhoCompras = JSON.parse(localStorage.getItem("carrinho")) || [];
+        const carrinhoCompras = JSON.parse(localStorage.getItem("carrinho")) || { pedidos: [] };
+        const pedidoAtual = carrinhoCompras.pedidos[carrinhoCompras.pedidos.length - 1] || { itens: [] };
 
         const tabelaCarrinho = document.querySelector('.cart-table tbody');
         tabelaCarrinho.innerHTML = '';
 
-        carrinhoCompras.forEach(item => {
+        pedidoAtual.itens.forEach(item => {
             const html = `
                 <tr>
                     <td>${item.nome_produto}</td>
@@ -214,34 +178,21 @@ export async function carregarCarrinho() {
             tabelaCarrinho.innerHTML += html;
         });
 
-        // Atualiza o total do carrinho
         calcTotal();
     } catch (error) {
         console.error('Erro ao carregar carrinho:', error);
     }
 }
-// // Função para finalizar o pedido
+
+//Função para finalizar pedido
 export async function finalizarPedido() {
     try {
-        const carrinho = await apiFetch('carrinho');
-
-        // Marca o último pedido como finalizado
+        const carrinho = JSON.parse(localStorage.getItem("carrinho")) || { pedidos: [] };
         const pedidoFinalizado = carrinho.pedidos[carrinho.pedidos.length - 1];
         pedidoFinalizado.finalizado = true;
 
-        // Atualiza o carrinho no servidor
-        const updateResponse = await fetch(`${BASE_URL}/carrinho`, {
-            method: "PUT",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(carrinho),
-        });
+        localStorage.setItem("carrinho", JSON.stringify(carrinho));
 
-        if (!updateResponse.ok) {
-            throw new Error(`Erro ao finalizar pedido: ${updateResponse.statusText}`);
-        }
-
-        // Limpa o carrinho no localStorage e avisa o usuário
-        localStorage.setItem('carrinho', JSON.stringify([]));
         alert('Pedido finalizado com sucesso!');
     } catch (error) {
         console.error('Erro ao finalizar pedido:', error);
