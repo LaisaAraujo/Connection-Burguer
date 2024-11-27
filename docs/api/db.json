@@ -193,41 +193,14 @@
     ],
     "total": 104,
     "endereco": {
-      "nome": "ana maria",
-      "endereco": "aaaaaaaaaaaaaaaa",
-      "cep": "4",
-      "bairro": "7",
-      "numero": "1"
+      "nome": "aaa",
+      "endereco": "aaa",
+      "cep": "aaa",
+      "bairro": "aaa",
+      "numero": "22"
     },
     "pagamento": {
       "forma_pagamento": "Cartão de Crédito"
-    },
-    "pedidos": [
-      {
-        "id_pedido": 1,
-        "itens": [
-          {
-            "codigo_produto": "14",
-            "nome_produto": "Pepsi",
-            "descricao_produto": "Aprecie o sabor clássico e refrescante da Pepsi de 300ml, ideal para matar a sede e complementar sua refeição com um toque de nostalgia.",
-            "preco_produto": "10.00",
-            "imagem_produto": "imagens/produto14.png",
-            "id": "bdff",
-            "quantidade": 6
-          },
-          {
-            "codigo_produto": "3",
-            "nome_produto": "Php Burguer",
-            "descricao_produto": "O Php Burguer traz uma explosão de sabores! Um hambúrguer suíno suculento coberto com bacon crocante, cheddar derretido e cebola roxa, tudo montado em um pão especial com alface e tomate frescos, finalizado com molho barbecue. Uma combinação perfeita para quem adora um hambúrguer diferenciado.",
-            "preco_produto": "30.00",
-            "imagem_produto": "imagens/produto3.png",
-            "id": "6fc9",
-            "quantidade": 3
-          }
-        ],
-        "total": 150,
-        "finalizado": false
-      }
-    ]
+    }
   }
 }
