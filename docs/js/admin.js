@@ -1,21 +1,21 @@
-// Obtendo os dados do JSON Server para os pedidos
 async function carregarPedidos() {
     try {
         const resposta = await fetch('http://localhost:3000/carrinho');
-        const pedidos = await resposta.json();
+        const pedido = await resposta.json(); // Retorna um único objeto
         const resultadoDiv = document.getElementById('resultado');
 
-        // Verifique se o pedido é um objeto válido e contém dados
-        if (!pedidos || !pedidos.itens || pedidos.itens.length === 0) {
+        // Verifica se o pedido existe e possui itens
+        if (!pedido || !pedido.itens || pedido.itens.length === 0) {
             resultadoDiv.innerHTML = '<p>Nenhum pedido encontrado.</p>';
             return;
         }
 
+        // Renderiza o pedido
         let pedidoHtml = `<h2>Pedido:</h2>`;
         pedidoHtml += `<ul>`;
 
         // Informações dos itens do pedido
-        pedidos.itens.forEach(item => {
+        pedido.itens.forEach(item => {
             pedidoHtml += '<hr>';
             pedidoHtml += `<li><strong>Produto:</strong> ${item.nome_produto}</li>`;
             pedidoHtml += `<li><strong>Quantidade:</strong> ${item.quantidade || 1}</li>`;
@@ -27,19 +27,22 @@ async function carregarPedidos() {
 
         // Informações de endereço
         pedidoHtml += `<h3>Endereço:</h3>`;
-        pedidoHtml += `<p><strong>Nome:</strong> ${pedidos.endereco.nome}</p>`;
-        pedidoHtml += `<p><strong>Endereço:</strong> ${pedidos.endereco.endereco}, ${pedidos.endereco.numero}</p>`;
-        pedidoHtml += `<p><strong>Bairro:</strong> ${pedidos.endereco.bairro}</p>`;
-        pedidoHtml += `<p><strong>CEP:</strong> ${pedidos.endereco.cep}</p>`;
+        pedidoHtml += `<p><strong>Nome:</strong> ${pedido.endereco.nome}</p>`;
+        pedidoHtml += `<p><strong>Endereço:</strong> ${pedido.endereco.endereco}, ${pedido.endereco.numero}</p>`;
+        pedidoHtml += `<p><strong>Bairro:</strong> ${pedido.endereco.bairro}</p>`;
+        pedidoHtml += `<p><strong>CEP:</strong> ${pedido.endereco.cep}</p>`;
 
         // Informações de pagamento
         pedidoHtml += `<h3>Pagamento:</h3>`;
-        pedidoHtml += `<p><strong>Forma de Pagamento:</strong> ${pedidos.pagamento.forma_pagamento}</p>`;
+        pedidoHtml += `<p><strong>Forma de Pagamento:</strong> ${pedido.pagamento.forma_pagamento}</p>`;
 
         // Total do pedido
         pedidoHtml += `<h3>Total:</h3>`;
-        pedidoHtml += `<p><strong>R$${parseFloat(pedidos.total).toFixed(2)}</strong></p>`;
+        pedidoHtml += `<p><strong>R$${parseFloat(pedido.total).toFixed(2)}</strong></p>`;
 
+        pedidoHtml += '<hr>'; // Separador entre pedidos
+
+        // Insere o HTML no container
         resultadoDiv.innerHTML = pedidoHtml;
     } catch (error) {
         console.error('Erro ao carregar pedidos:', error);

@@ -1,12 +1,7 @@
-
-import {addItemCarrinho} from "./funcoes.js";
-
+import { addItemCarrinho } from "./funcoes.js";
 
 // Obtém o código do produto da URL
-const urlParams = new URLSearchParams(window.location.search);
-// Obtém o código do produto da URL
-let codigoProduto = urlParams.get('codigo_produto'); // Agora é 'let'
-
+let codigoProduto = new URLSearchParams(window.location.search).get('codigo_produto'); // Agora é let
 
 // Seleciona o container para renderizar o produto
 const container = document.querySelector("main section div.container");
@@ -14,7 +9,7 @@ const container = document.querySelector("main section div.container");
 // Função para carregar o produto
 (async () => {
     try {
-        codigoProduto = localStorage.getItem("prodID");
+        codigoProduto = localStorage.getItem("prodID"); // Isso agora funciona porque é let
 
         if (!codigoProduto) {
             container.innerHTML = "<p>Nenhum código de produto foi especificado.</p>";

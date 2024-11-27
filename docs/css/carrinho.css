@@ -225,6 +225,7 @@ main {
     background-color: var(--button-hover-color);
 }
 
+
 /* Rodapé */
 footer {
     gap: 50px;
@@ -252,7 +253,6 @@ footer h5 {
     text-align: center;
     width: 100%;
 }
-
 
 /* Responsividade */
 @media (max-width: 768px) {
