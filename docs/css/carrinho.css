@@ -1,0 +1,296 @@
+:root {
+    --primary-color: #E2B71D; /* Cor principal (amarelo) */
+    --secondary-color: #000; /* Cor secundária (preto) */
+    --background-color: #f0f0f0; /* Cor de fundo */
+    --text-color: #333; /* Cor do texto */
+    --font-family: 'Inter', sans-serif; /* Fonte */
+    --button-color: #ff8000; /* Cor dos botões */
+    --button-hover-color: #e07b00; /* Cor dos botões ao passar o mouse */
+    --border-radius: 8px; /* Arredondamento dos elementos */
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding-top: 60px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Menu de navegação */
+header {
+    background-color: black;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Espaça os elementos no header */
+    align-items: center;
+    padding: 10px 20px; /* Espaçamento interno */
+    height: 70px; /* Altura fixa do header */
+}
+
+.navbar .logo img {
+    height: 50px; /* Ajusta o tamanho do logotipo */
+    max-height: 100%; /* Garante que a imagem não ultrapasse o header */
+    width: auto; /* Mantém a proporção da imagem */
+}
+
+.navbar .nav-links {
+    display: flex;
+    gap: 50px; /* Espaçamento entre os links */
+}
+
+.navbar .nav-links a {
+    text-decoration: none;
+    color: white; /* Torna os links visíveis */
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.navbar .nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.navbar .fas.fa-shopping-cart {
+    font-size: 24px;
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+
+/* Estilo do Carrinho de Compras */
+main {
+    padding: 80px 20px 20px; /* Ajuste devido ao header fixo */
+}
+
+.carrinho {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+.heading {
+    font-size: 2rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.cart-table th,
+.cart-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-table th {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.cart-table tr:hover {
+    background-color: #f7f7f7;
+}
+
+.cart-table td button {
+    background-color: #ff4c4c;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease;
+}
+
+.cart-table td button:hover {
+    background-color: #e03e3e;
+}
+
+/* Estilo do Total */
+.total-container {
+    font-size: 1.5rem;
+    text-align: right;
+    margin-top: 20px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Estilo do Formulário de Endereço */
+.order {
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.order h2 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+}
+
+.input-group input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+/* Estilo das opções de pagamento */
+.pagamento {
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.payment-options label {
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.payment-options input {
+    margin-right: 10px;
+}
+
+/* Botão de Finalizar */
+.finalizar-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.finalizar-container .btn {
+    background-color: var(--button-color);
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 10px 30px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.finalizar-container .btn:hover {
+    background-color: var(--button-hover-color);
+}
+
+
+/* Rodapé */
+footer {
+    gap: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: #000000;
+    color: #ffffff;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-section h3 {
+    margin-bottom: 5px;
+}
+
+footer h5 {
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .order,
+    .pagamento {
+        max-width: 100%;
+    }
+
+    .finalizar-container .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .heading {
+        font-size: 1.6rem;
+    }
+
+    .cart-table th,
+    .cart-table td {
+        font-size: 0.9rem;
+    }
+
+    .input-group input {
+        font-size: 0.9rem;
+    }
+
+    footer p {
+        font-size: 0.9rem;
+    }
+}

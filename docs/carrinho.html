@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connection Burguer - Carrinho</title>
+    <link rel="stylesheet" href="css/carrinho.css">
+    <script async src="js/carrinho.js" type="module"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Menu de navegação -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="imagens/logo.png" alt="Logo da Connection Burguer" />
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="produtos.html" class="nav-item">Cardápio</a></li>
+                <li><a href="pedido.html" class="nav-item">Pedido</a></li>
+                <a href="carrinho.html" class="fas fa-shopping-cart" aria-label="Carrinho"></a>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Carrinho de compras -->
+    <main>
+        <section class="carrinho">
+            <h1 class="heading">Seu carrinho</h1>
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Preço</th>
+                        <th>Ações</th>     
+                    </tr>
+                </thead>
+                <tbody id="cart-items">
+                    <!-- Os itens do carrinho serão inseridos dinamicamente -->
+                </tbody>
+            </table>
+            <div id="cart-total" class="total-container"></div>
+        </section>
+
+        <!-- Formulário de endereço -->
+        <section class="order">
+            <h2>Preencha seu endereço</h2>
+            <form>
+                <div class="input-group">
+                    <label for="name">Seu nome</label>
+                    <input id="name" type="text" placeholder="Digite seu nome" required>
+                </div>
+                <div class="input-group">
+                    <label for="endereco">Endereço</label>
+                    <input id="endereco" type="text" placeholder="Digite seu endereço" required>
+                </div>
+                <div class="input-group">
+                    <label for="cep">CEP</label>
+                    <input id="cep" type="text" placeholder="Digite seu CEP" pattern="[0-9]{5}-[0-9]{3}" required>
+                </div>
+                <div class="input-group">
+                    <label for="bairro">Bairro</label>
+                    <input id="bairro" type="text" placeholder="Digite seu bairro" required>
+                </div>
+                <div class="input-group">
+                    <label for="numero">Número</label>
+                    <input id="numero" type="text" placeholder="Número da casa" required>
+                </div>
+            </form>
+        </section>
+
+        <!-- Formas de pagamento -->
+        <section class="pagamento">
+            <h2>Escolha sua forma de pagamento</h2>
+            <div class="payment-options">
+              <label><input type="radio" name="pagamento" value="Dinheiro"> Dinheiro</label>
+              <label><input type="radio" name="pagamento" value="Cartão de Crédito"> Cartão de Crédito</label>
+              <label><input type="radio" name="pagamento" value="Cartão de Débito"> Cartão de Débito</label>
+            </div>
+          </section>
+
+        <!-- Botão de finalizar -->
+        <div class="finalizar-container">
+            <button id="finalizar-compra" class="btn">Finalizar Compra</button>
+        </div>
+    </main>
+
+        <!-- Rodapé do site -->
+<footer>
+    <div class="footer-section">
+        <h3>Contato</h3>
+        <p>contato@connectionburger.com.br<br>Telefone: (19) 3217-8847<br>WhatsApp: (19) 99623-5148</p>
+    </div>
+    <div class="footer-section">
+        <h3>Endereço</h3>
+        <p>Rua Emílio Ribas, 429<br>Cambuí – Campinas/SP<br>CEP: 13025-141</p>
+    </div>
+    <div class="footer-section">
+        <h3>Funcionamento</h3>
+        <p>Terça-feira à Quinta-Feira: 18:30 às 23:00<br>Sexta-Feira à Domingo: 18:30 às 00:00</p>
+    </div>
+
+    <h5>Connection Burguer</h5>
+</footer>
+<!-- Fim do Rodapé do site -->
+</body>
+</html>
